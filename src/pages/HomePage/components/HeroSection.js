@@ -15,12 +15,18 @@ const HeroSection = () => {
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <div className=" text-center text-white " style={{ transition: 'all 0.3s ease-out' }}>
-                            <h1 className='p-2 text-2xl  font-bold'>Explore  Remote Internship</h1>
-                            <div className='p-2 pb-6 text-4xl font-extrabold '>EMPOWERING TOMORROW'S DEVELOPERS<br/> TODAY</div>
-                            <div>
-                                <Link to='/internship-page' className="w-36 p-3 text-center bg-black hover:#8e44ad  font-bold text-white">Browse More</Link>
-
-                            </div>
+                            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-4 md:mb-6">
+                                Explore Remote Internship
+                            </h1>
+                            <p className="text-xl md:text-3xl lg:text-4xl font-extrabold text-center mb-6">
+                                EMPOWERING TOMORROW'S DEVELOPERS<br/> TODAY
+                            </p>
+                            <Link
+                                to="/internship-page"
+                                className="w-36 md:w-48 bg-black hover:bg-purple-700 text-white font-bold py-3 px-4 text-center transition duration-300"
+                            >
+                                Browse More
+                            </Link>
                         </div>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
@@ -31,13 +37,19 @@ const HeroSection = () => {
                         className="w-full" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide1" className="btn btn-circle">❮</a>
-                        <div className=" text-center text-white ">
-                            <h1 className='p-2 text-2xl  font-bold'>Explore  Remote Internship</h1>
-                            <div className='p-2 pb-6 text-4xl font-extrabold '>DISCOVER YOUR SKILLS</div>
-                            <div>
-                                <Link to='/internship-page' className="w-36 p-3 text-center bg-black hover:#8e44ad  font-bold text-white">Browse More</Link>
-
-                            </div>
+                        <div className=" text-center  " style={{ transition: 'all 0.3s ease-out' }}>
+                            <h1 className="text-lg md:text-xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
+                                Explore Remote Internship
+                            </h1>
+                            <p className="text-xl text-white md:text-3xl lg:text-4xl font-extrabold text-center mb-6">
+                                DISCOVER YOUR SKILLS
+                            </p>
+                            <Link
+                                to="/internship-page"
+                                className="w-36 md:w-48 bg-black hover:bg-purple-700 text-white font-bold py-3 px-4 text-center transition duration-300"
+                            >
+                                Browse More
+                            </Link>
                         </div>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
@@ -48,13 +60,19 @@ const HeroSection = () => {
                         className="w-full" />
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <a href="#slide2" className="btn btn-circle">❮</a>
-                        <div className=" text-center text-white ">
-                            <h1 className='p-2 text-2xl  font-bold'>Explore  Remote Internship</h1>
-                            <div className='p-2 pb-6 text-4xl font-extrabold '>APPLY INTERNSHIP FOR FREE<br/> TODAY</div>
-                            <div>
-                                <Link to='/internship-page' className="w-36 p-3 text-center bg-black hover:#8e44ad  font-bold text-white">Browse More</Link>
-
-                            </div>
+                        <div className=" text-center  " style={{ transition: 'all 0.3s ease-out' }}>
+                            <h1 className="text-lg md:text-xl lg:text-3xl font-bold text-center mb-4 md:mb-6">
+                                Explore Remote Internship
+                            </h1>
+                            <p className="text-xl text-white md:text-3xl lg:text-4xl font-extrabold text-center mb-6">
+                                APPLY INTERNSHIP FOR FREE TODAY
+                            </p>
+                            <Link
+                                to="/internship-page"
+                                className="w-36 md:w-48 bg-black hover:bg-purple-700 text-white font-bold py-3 px-4 text-center transition duration-300"
+                            >
+                                Browse More
+                            </Link>
                         </div>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
