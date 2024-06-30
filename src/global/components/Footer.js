@@ -26,8 +26,8 @@ const Footer = () => {
                    </nav>
                    <nav>
                        <h6 className="footer-title text-2xl">Follow Us</h6>
-                       <Link to='' className=" text-[#8e44ad] hover:translate-x-4 duration-300 text-lg font-bold flex  "><span className=' pr-1 text-[#8e44ad] text-2xl'><FaFacebookF/> </span>Facebook</Link>
-                       <Link to='' className=" text-[#8e44ad] hover:translate-x-4 duration-300 text-lg font-bold  flex "><span className=' pr-1 text-[#8e44ad] text-2xl'><IoLogoLinkedin/> </span>Linkedin</Link>
+                       <Link to='https://www.facebook.com/people/YoungDev-Interns/61552048663871/' className=" text-[#8e44ad] hover:translate-x-4 duration-300 text-lg font-bold flex  "><span className=' pr-1 text-[#8e44ad] text-2xl'><FaFacebookF/> </span>Facebook</Link>
+                       <Link to='https://www.linkedin.com/company/youngdev-intern/?miniCompanyUrn=urn%3Ali%3Afs_miniCompany%3A100750742&lipi=urn%3Ali%3Apage%3Ad_flagship3_company_admin%3BoTe6IUoQTHKqQA8ImNZuLg%3D%3D' className=" text-[#8e44ad] hover:translate-x-4 duration-300 text-lg font-bold  flex "><span className=' pr-1 text-[#8e44ad] text-2xl'><IoLogoLinkedin/> </span>Linkedin</Link>
                    </nav>
 
             </footer>

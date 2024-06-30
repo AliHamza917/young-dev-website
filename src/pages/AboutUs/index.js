@@ -5,7 +5,7 @@ const AboutUsPage = () => {
     return (
         <>
             <Main/>
-            
+
         </>
     );
 };

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logo1.jpg";
-import { GoSearch } from "react-icons/go";
 import { IoMenu } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 import ToggleSwitch from "./ToggleSwitch";
