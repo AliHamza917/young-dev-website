@@ -16,7 +16,7 @@ const AboutSection = () => {
                     <p className="text-lg mb-4">
                         Welcome to YoungDev Interns – Your Gateway to Skill Development!
                     </p>
-                    <Link className="bg-[#222] dark:bg-[#eee] dark:text-[black] w-56 hover:bg-[#8e44ad] text-white font-bold py-2 px-16 rounded" to=''>
+                    <Link to='/about-us-page' className="bg-[#222] dark:bg-[#eee] dark:text-[black] w-56 hover:bg-[#8e44ad] text-white font-bold py-2 px-16 rounded" >
                         Read More
                     </Link>
                 </div>

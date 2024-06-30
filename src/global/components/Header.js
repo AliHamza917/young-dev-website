@@ -67,14 +67,14 @@ export default Header;
 
 const itemsNames = [
     "Home",
-    "Blog",
-    "Contact",
+    "About",
+    "Internships",
 
 ];
 const pathNames = [
     "/",
-    "blog-page",
-    "contact-us",
+    "/about-us-page",
+    "/internship-page",
 ];
 const listItem = itemsNames.map((itemsName, index) => (
     <div
