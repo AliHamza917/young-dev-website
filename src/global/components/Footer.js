@@ -9,7 +9,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 const Footer = () => {
     return (
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' ,  }}>
-            <footer className="footer text-neutral-content p-10 px-36" >
+            <footer className="footer text-neutral-content p-10 px-20 md:px-36" >
 
                    <nav>
                        <h6 className="footer-title text-2xl">Services</h6>
@@ -20,7 +20,7 @@ const Footer = () => {
                    </nav>
                    <nav>
                        <h6 className="footer-title text-2xl">Contact Info</h6>
-                       <p className=" flex  hover:translate-x-4 duration-300 text-[#8e44ad] text-lg font-bold  "><span className=' pr-2 text-[#8e44ad] text-2xl'> <FaEnvelope/> </span>Youngdevinterns60@gmail.com</p>
+                       <p className=" flex  hover:translate-x-4 duration-300 text-[#8e44ad] md:text-lg text-xs font-bold  "><span className=' pr-2 text-[#8e44ad] text-2xl'> <FaEnvelope/> </span>Youngdevinterns60@gmail.com</p>
                        <p className=" flex hover:translate-x-4 duration-300 text-[#8e44ad] text-lg font-bold  "><span className='pr-2 text-[#8e44ad] text-2xl'><FaMap/> </span>Pakistan - Islamabad</p>
 
                    </nav>

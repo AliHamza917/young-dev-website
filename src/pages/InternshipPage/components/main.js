@@ -9,7 +9,7 @@ const Main = () => {
         <div className="mx-auto max-w-screen-xl">
             <div className=''>
                 {/* Header Image */}
-                <div className='bg-green-100' >
+                <div className='' >
                     <img src={headerImg} className="w-full" alt="Header" />
 
                 </div>

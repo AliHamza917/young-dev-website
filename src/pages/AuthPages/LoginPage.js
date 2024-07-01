@@ -2,42 +2,48 @@ import React from 'react';
 
 const LoginPage = () => {
     return (
-        <>
-            <div className="hero bg-base-200 min-h-screen px-72">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
-                        </p>
+        <div className="bg-base-200 min-h-screen flex items-center justify-center">
+            <div className="bg-white max-w-md w-full p-8 rounded-lg shadow-lg">
+                <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Login now!</h1>
+                <p className="text-gray-600 text-center mb-6">
+                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                    quasi. In deleniti eaque aut repudiandae et a id nisi.
+                </p>
+                <form>
+                    <div className="mb-4">
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                            placeholder="Email"
+                            required
+                        />
                     </div>
-                    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                        <form className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn bg-[#000000] text-white text-lg font-bold hover:bg-[#8e44ad] ">Login</button>
-                            </div>
-                        </form>
+                    <div className="mb-4">
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                            placeholder="Password"
+                            required
+                        />
+                        <div className="mt-1 text-right">
+                            <a href="#" className="text-sm text-gray-600 hover:text-gray-800">Forgot password?</a>
+                        </div>
                     </div>
-                </div>
+                    <div className="mt-6">
+                        <button
+                            type="submit"
+                            className="w-full bg-[#000000] text-white text-lg font-bold py-2 px-4 rounded hover:bg-[#8e44ad] focus:outline-none focus:ring-2 focus:ring-[#8e44ad] focus:ring-opacity-50"
+                        >
+                            Login
+                        </button>
+                    </div>
+                </form>
             </div>
-            
-        </>
+        </div>
     );
 };
 
