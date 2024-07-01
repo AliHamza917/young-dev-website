@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo1.jpg";
+import Logo from "../../assets/youngDev-logo-bg.png";
 import { IoMenu } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 import ToggleSwitch from "./ToggleSwitch";
@@ -14,25 +14,26 @@ const Header = () => {
 
     return (
         <>
-            <div className="px-36">
+            <div className="px-16 md:px-36">
                 <div
                     className={`flex justify-center dark:bg-darkModeColor rounded-xl items-center    lg:justify-between py-2 `}
                 >
-                    <div className="flex sm:justify-center">
-                        <div className="h-12 w-12 flex pt-[10%] lg:hidden" onClick={handleToggle}>
-                            {checked ? (
-                                <IoCloseSharp className="h-12 w-12 flex lg:hidden" />
-                            ) : (
-                                <IoMenu className="h-12 w-12 flex lg:hidden" />
-                            )}
-                        </div>
-                        <Link to={"/"} className='flex place-items-center '>
+                    <div className="w-full flex justify-between ">
+
+                        <Link to={"/"} className='m '>
                             <img
                                 className="dark:bg-[#f4f4f557] rounded-3xl p-2 px-4"
                                 src={Logo}
                                 alt=""
-                            /><b className=' -ml-5 text-lg'>YoungDev Interns</b>
+                            />
                         </Link>
+                        <div className="h-12 w-12 flex  pt-[10%] lg:hidden" onClick={handleToggle}>
+                            {checked ? (
+                                <IoCloseSharp className="h-16 w-16  flex lg:hidden" />
+                            ) : (
+                                <IoMenu className="h-12 w-12 flex lg:hidden" />
+                            )}
+                        </div>
                     </div>
 
                     <div className="hidden lg:flex item">
@@ -68,6 +69,7 @@ const itemsNames = [
     "Home",
     "About",
     "Internships",
+    "LogIn|Register"
 
 ];
 const pathNames = [
