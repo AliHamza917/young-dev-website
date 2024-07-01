@@ -69,6 +69,7 @@ const itemsNames = [
     "Home",
     "About",
     "Internships",
+    "Blogs",
     "LogIn|Register"
 
 ];
@@ -76,6 +77,8 @@ const pathNames = [
     "/",
     "/about-us-page",
     "/internship-page",
+    "/blogs-page",
+    "/login-page"
 ];
 const listItem = itemsNames.map((itemsName, index) => (
     <div

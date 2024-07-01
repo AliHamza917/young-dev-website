@@ -1,5 +1,5 @@
 import React from 'react';
-import headerImg from '../../../assets/header-bg-1.png';
+import headerImg from '../../../assets/header-about.png';
 import aboutImg from '../../../assets/ab.jpg';
 
 const Main = () => {
