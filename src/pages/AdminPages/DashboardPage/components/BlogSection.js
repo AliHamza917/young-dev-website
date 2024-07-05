@@ -2,6 +2,7 @@ import React from 'react';
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import { IoAddCircleOutline } from "react-icons/io5";
+import {Link} from "react-router-dom";
 
 const BlogSection = () => {
     return (
@@ -11,9 +12,9 @@ const BlogSection = () => {
                     <h1 className='text-3xl lg:text-5xl md:text-6xl py-8 font-extrabold'>Manage Blogs </h1>
                 </div>
                 <div className='bg-green-100 w-full '>
-                    <a href="" className="btn btn-md bg-[#ffbc53] me-2 absolute  right-36">
+                    <Link to='/add-blog-form' className="btn btn-md bg-[#ffbc53] me-2 absolute  right-36">
                         <IoAddCircleOutline className='w-20 h-10 text-white'/>
-                    </a>
+                    </Link>
                 </div><br/><br/>
                 <table className="table">
                     {/* head */}
