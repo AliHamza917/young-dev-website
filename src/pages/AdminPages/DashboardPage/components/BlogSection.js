@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { IoTrash } from "react-icons/io5";
 import { IoAddCircleOutline } from "react-icons/io5";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 const BlogSection = () => {
+
+    const [tableData , setTableData] = useState([])
+
+        useEffect(()=>{
+            axios.get('http://localhost:5000/api/blogs/show-blog').then(response=>{
+                setTableData(response.data)
+            })
+        })
+
+
+    // to Remove HTML Tags in Description
+    const stripHtml = (html) => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        return tempDiv.textContent || tempDiv.innerText || '';
+    };
+
+
     return (
         <>
             <div className="overflow-x-auto px-10">
@@ -21,58 +40,41 @@ const BlogSection = () => {
                     <thead>
                     <tr>
                         <th></th>
-                        <th>Blog</th>
-                        <th>Date</th>
+                        <th>Blog Title</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {/* row 1 */}
-                    <tr>
-                        <th>1</th>
-                        <td>Cy Ganderton</td>
-                        <td>7 July 2024 </td>
-                        <td>
-                            <div className="actions">
-                                <a href="#" className="btn btn-md bg-[#18aefa] me-2">
-                                    <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
-                                </a>
-                                <a href="#" className="btn btn-md bg-[#ffbc53]">
-                                    <IoTrash className='w-5 h-5 text-white font-bold'/>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr>
-                        <th>2</th>
-                        <td>Hart Hagerty</td>
-                        <td>Desktop Support Technician</td>
-                        <td> <div className="actions">
-                            <a href="edit-student.html" className="btn btn-md bg-[#18aefa] me-2">
-                                <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
-                            </a>
-                            <a href="students.html#" className="btn btn-md bg-[#ffbc53]">
-                                <IoTrash className='w-5 h-5 text-white font-bold'/>
-                            </a>
-                        </div></td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                        <th>3</th>
-                        <td>Brice Swyre</td>
-                        <td>Tax Accountant</td>
-                        <td> <div className="actions">
-                            <a href="edit-student.html" className="btn btn-md bg-[#18aefa] me-2">
-                                <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
-                            </a>
-                            <a href="students.html#" className="btn btn-md bg-[#ffbc53]">
-                                <IoTrash className='w-5 h-5 text-white font-bold'/>
-                            </a>
-                        </div></td>
-                    </tr>
+                    {/*Blog Rows*/}
+                    {
+                        tableData.map((table , index)=>(
+                            <tr key={index}>
+                                <th>{index+1}</th>
+                                <td>{table.title}</td>
+                                <td>{stripHtml(table.description).length > 20
+                                    ? `${stripHtml(table.description).substring(0, 20)}...`
+                                    : stripHtml(table.description)}
+                                </td>
+                                <td>
+                                    <div className="actions">
+                                        <Link to={`/update-blog/:${table._id}`} className="btn btn-md bg-[#18aefa] me-2">
+                                            <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
+                                        </Link>
+                                        <Link to={`/delete-blog/:${table._id}`} className="btn btn-md bg-[#ffbc53]">
+                                            <IoTrash className='w-5 h-5 text-white font-bold'/>
+                                        </Link>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        ))
+                    }
+
+
+
                     </tbody>
-                </table>
+                </table><br/>
             </div>
 
         </>

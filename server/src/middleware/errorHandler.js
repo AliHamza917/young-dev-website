@@ -1,21 +1,27 @@
-const errorHandler = (err ,req ,res , next)=>{
+const errorHandler = (err, req, res, next) => {
     const statusCode = res.statusCode ? res.statusCode : 500;
-    switch (statusCode){
+
+    switch (statusCode) {
         case 400:
-            res.json({title : "Validation Failed",
+            return res.status(400).json({
+                title: "Validation Failed",
                 message: err.message,
-                stackTrace: err.stack
+                stackTrace: err.stack,
             });
         case 404:
-            res.json({title : "Not Found",
+            return res.status(404).json({
+                title: "Not Found",
                 message: err.message,
-                stackTrace: err.stack
+                stackTrace: err.stack,
             });
-
-        default :
-            console.log("No Error")
-            break;
+        default:
+            console.error(err); // Log the error for debugging
+            return res.status(statusCode).json({
+                title: "Internal Server Error",
+                message: "An unexpected error occurred.",
+                stackTrace: err.stack,
+            });
     }
+};
 
-}
 module.exports = errorHandler;

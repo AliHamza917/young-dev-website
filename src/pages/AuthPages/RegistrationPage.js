@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
 const RegistrationPage = () => {
     const [inputs, setInputs] = useState({});
+    const navigate = useNavigate();
 
     const handleInput = (event) => {
         const { name, value } = event.target;
@@ -13,9 +16,31 @@ const RegistrationPage = () => {
 
 
     };
-    const handleSubmit = (event)=>{
+    const handleSubmit = async (event)=>{
         event.preventDefault();
-        console.log(inputs);
+
+
+        try{
+            if (inputs.password === inputs.confirm_password ){
+                const response = await axios.post("http://localhost:5000/api/auth/register" , inputs,
+                    {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                )
+                toast.success("User Registered SuccessFully")
+                navigate('/login-page' ,{ state: { message: "User Registered Successfully" } })
+                console.log(response.data)
+            }
+
+        }catch (err){
+            console.log(err)
+        }
+
+
+
+
     }
 
     return (
@@ -23,6 +48,7 @@ const RegistrationPage = () => {
             <div className="bg-base-200 min-h-screen flex items-center justify-center">
                 <div className="bg-white max-w-md w-full p-8 rounded-lg shadow-lg">
                     <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Register now!</h1>
+                    <ToastContainer />
                     <p className="text-gray-600 text-center mb-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
