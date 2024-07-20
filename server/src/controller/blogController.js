@@ -55,18 +55,39 @@ const showBlog = expressAsyncHandler( async (req ,res)=>{
 })
 
 
-const updateBlog = expressAsyncHandler(async (req,res)=>{
+const getBlog = expressAsyncHandler(async (req,res)=>{
     // const purchaseId = mongoose.Type.ObjectId(req.params.p_id);
 
+
     try{
-        const purchase = await BlogModel.findById(req.params.b_id)
-        res.status(200).json(purchase)
+        const blogId = req.params.b_id;
+        const blog = await BlogModel.findById(blogId)
+        res.status(200).json(blog)
 
     }catch (error){
         console.log('Error', error)
     }
 })
 
+const updateBlog = expressAsyncHandler(async (req ,res)=>{
+    try
+    {
+        const blogId = req.params.b_id;
+        const { title , description } = req.body;
+        const blog = await BlogModel.findByIdAndUpdate(
+            {_id:blogId },
+            { title, description } ,
+            {new: true}
+        )
+        res.status(200).json('Data Update Successfull')
 
-module.exports = { createBlog , showBlog ,updateBlog};
+    }catch (error) {
+        console.log('Error Updating' , error)
+
+    }
+})
+
+
+
+module.exports = { createBlog , showBlog ,getBlog , updateBlog};
 // module.exports = { createBlog, upload };

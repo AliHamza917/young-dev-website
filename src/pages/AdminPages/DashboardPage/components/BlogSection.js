@@ -9,10 +9,12 @@ const BlogSection = () => {
 
     const [tableData , setTableData] = useState([])
 
+
         useEffect(()=>{
             axios.get('http://localhost:5000/api/blogs/show-blog').then(response=>{
                 setTableData(response.data)
             })
+
         })
 
 
@@ -58,10 +60,10 @@ const BlogSection = () => {
                                 </td>
                                 <td>
                                     <div className="actions">
-                                        <Link to={`/update-blog/:${table._id}`} className="btn btn-md bg-[#18aefa] me-2">
+                                        <Link to={`/get-blog/${table._id}`} className="btn btn-md bg-[#18aefa] me-2">
                                             <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
                                         </Link>
-                                        <Link to={`/delete-blog/:${table._id}`} className="btn btn-md bg-[#ffbc53]">
+                                        <Link to={`/delete-blog/${table._id}`} className="btn btn-md bg-[#ffbc53]">
                                             <IoTrash className='w-5 h-5 text-white font-bold'/>
                                         </Link>
                                     </div>

@@ -10,6 +10,7 @@ import DashboardPage from "./pages/AdminPages/DashboardPage";
 import RegistrationPage from "./pages/AuthPages/RegistrationPage";
 import BlogForm from "./pages/AdminPages/Blog";
 import BlogPage from "./pages/BlogPage";
+import UpdateBlog from "./pages/AdminPages/Blog/UpdateBlog";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                   <Route path='/dashboard-page' element={<DashboardPage/>}/>
                   <Route path='/registration-page' element={<RegistrationPage/>}/>
                   <Route path='/add-blog-form' element={<BlogForm/>}/>
+                  <Route path='/get-blog/:b_id' element={<UpdateBlog/>}/>
 
               </Routes>
 
