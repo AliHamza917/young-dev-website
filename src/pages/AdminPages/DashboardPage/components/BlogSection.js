@@ -4,6 +4,7 @@ import { IoTrash } from "react-icons/io5";
 import { IoAddCircleOutline } from "react-icons/io5";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 const BlogSection = () => {
 
@@ -15,7 +16,32 @@ const BlogSection = () => {
                 setTableData(response.data)
             })
 
-        })
+        },[])
+
+
+    const handelDel  = async (b_id ,event)=>{
+        event.preventDefault();
+
+        const response = await axios.delete(`http://localhost:5000/api/blogs/del-blog/${b_id}`);
+
+        try {
+
+            if (!response.data.success) {
+
+                toast.error('Failed to Delete Blog');
+
+                // setImgFile(null);
+            } else {
+                toast.success('Blog Deleted Successfully');
+                setTableData(prevTableData => prevTableData.filter(blog => blog._id !== b_id));
+
+            }
+        } catch (err) {
+            console.error(err);
+            toast.error('Error Creating Blog');
+        }
+
+    }
 
 
     // to Remove HTML Tags in Description
@@ -63,9 +89,9 @@ const BlogSection = () => {
                                         <Link to={`/get-blog/${table._id}`} className="btn btn-md bg-[#18aefa] me-2">
                                             <FaRegPenToSquare className='w-5 h-5 text-white font-bold'/>
                                         </Link>
-                                        <Link to={`/delete-blog/${table._id}`} className="btn btn-md bg-[#ffbc53]">
+                                        <button onClick={(event) => handelDel(table._id, event)} className="btn btn-md bg-[#ffbc53]">
                                             <IoTrash className='w-5 h-5 text-white font-bold'/>
-                                        </Link>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

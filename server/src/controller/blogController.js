@@ -82,12 +82,44 @@ const updateBlog = expressAsyncHandler(async (req ,res)=>{
         res.status(200).json('Data Update Successfull')
 
     }catch (error) {
+
         console.log('Error Updating' , error)
 
     }
 })
 
+const delBlog = expressAsyncHandler(async (req ,res)=>{
+   try{
+        const blogId = req.params.b_id
+        const blog = await BlogModel.findByIdAndDelete(blogId)
+
+        if (!blog) {
+            return res.status(404).json({ success: false, message: 'Blog not found' });
+        }
+
+        res.status(200).json({ success: true, message: 'Blog deleted successfully' });
+
+   } catch (error) {
+    console.error('Error deleting blog:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+}
+
+})
 
 
-module.exports = { createBlog , showBlog ,getBlog , updateBlog};
+const blogCount = expressAsyncHandler(async (req , res)=>{
+
+    try{
+        const count = await BlogModel.countDocuments()
+
+        res.status(200).json(count)
+
+    }catch (error){
+        console.log(error)
+    }
+})
+
+
+
+module.exports = { createBlog , showBlog ,getBlog , updateBlog , delBlog , blogCount};
 // module.exports = { createBlog, upload };

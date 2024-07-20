@@ -21,7 +21,7 @@ const Main = () => {
                     <div className="bg-[#eee] dark:bg-darkModeColor">
                         <h1 className="py-8 text-4xl md:text-6xl text-center">BLOGS</h1>
                         <div className="grid grid-cols-1 pb-14 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-36">
-                            <CardWidget2 />
+                            <CardWidget2 title = 'Web Development' description = 'All the tasks will be assigned on Backend and fronted of the website' />
                             <CardWidget2 />
                             <CardWidget2 />
 

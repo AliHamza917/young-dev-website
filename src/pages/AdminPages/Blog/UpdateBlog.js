@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {toast, ToastContainer} from "react-toastify";
 import JoditEditor from "jodit-react";
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const UpdateBlog = () => {
 
@@ -49,16 +49,8 @@ const UpdateBlog = () => {
     };
 
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        console.log(data)
-
-    };
     const handleUpdate = async (event)=>{
         event.preventDefault();
-
-        console.log(inputs)
 
         const response = await axios.put(`http://localhost:5000/api/blogs/update-blog/${b_id}`, inputs);
 
@@ -80,15 +72,12 @@ const UpdateBlog = () => {
 
     }
 
-
-    const handleReset = () => {
-        setInputs({ title: '', description: '' });
+    const navigate = useNavigate();
+    const handleCancel = () => {
+        navigate('/dashboard-page')
         // setImgFile(null);
     };
 
-    if (isLoading) {
-        return <div>Loading...</div>; // Display a loading message while fetching
-    }
 
     return (
         <>
@@ -97,7 +86,7 @@ const UpdateBlog = () => {
                     <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Add New Blog</h1>
 
                     <ToastContainer />
-                    <form onSubmit={handleSubmit} encType="multipart/form-data">
+                    <form encType="multipart/form-data">
                         <div className="mb-4">
                             <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                                 Blog Title
@@ -138,10 +127,10 @@ const UpdateBlog = () => {
                             <div className="py-2 text-md text-center font-bold w-full">
                                 <button
                                     type="button"
-                                    onClick={handleReset}
+                                    onClick={handleCancel}
                                     className="w-full bg-[#000000] text-white text-lg font-bold py-2 px-4 rounded hover:bg-[#8e44ad] focus:outline-none focus:ring-2 focus:ring-[#8e44ad] focus:ring-opacity-50"
                                 >
-                                    Reset
+                                    Cancel
                                 </button>
                             </div>
                         </div>

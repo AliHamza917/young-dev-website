@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import JoditEditor from 'jodit-react';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 
 const BlogForm = () => {
     const editor = useRef(null);
@@ -62,6 +63,12 @@ const BlogForm = () => {
         // setImgFile(null);
     };
 
+    const navigate = useNavigate();
+    const handleGoBack = ()=>{
+        navigate('/dashboard-page')
+
+    }
+
     return (
         <>
             <div className="bg-base-200 min-h-screen flex items-center justify-center">
@@ -115,13 +122,21 @@ const BlogForm = () => {
                             >
                                 Create Blog
                             </button>
-                            <div className="py-2 text-md text-center font-bold w-full">
+                            <div className="py-2 flex justify-between text-md text-center font-bold w-full">
                                 <button
                                     type="button"
                                     onClick={handleReset}
-                                    className="w-full bg-[#000000] text-white text-lg font-bold py-2 px-4 rounded hover:bg-[#8e44ad] focus:outline-none focus:ring-2 focus:ring-[#8e44ad] focus:ring-opacity-50"
+                                    className="w-full mr-4 bg-[#000000] text-white text-lg font-bold py-2 px-4 rounded hover:bg-[#8e44ad] focus:outline-none focus:ring-2 focus:ring-[#8e44ad] focus:ring-opacity-50"
                                 >
                                     Reset
+                                </button>
+
+                                <button
+                                    type="button"
+                                    onClick={handleGoBack}
+                                    className="w-full bg-[#000000] text-white text-lg font-bold py-2 px-4 rounded hover:bg-[#8e44ad] focus:outline-none focus:ring-2 focus:ring-[#8e44ad] focus:ring-opacity-50"
+                                >
+                                    Go Back
                                 </button>
                             </div>
                         </div>

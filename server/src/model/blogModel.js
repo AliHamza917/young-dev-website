@@ -12,6 +12,11 @@ const blogSchema = mongoose.Schema({
     img:{
         type:String,
 
+    },
+
+    user_id:{
+        type: String
+
     }
 
 },{

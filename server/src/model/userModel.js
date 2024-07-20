@@ -13,7 +13,13 @@ const userSchema = mongoose.Schema({
     password:{
         type: String,
         required: true
+    },
+
+    isAdmin:{
+        type: String,
+        default: false
     }
+
 })
 
 module.exports = mongoose.model('User' ,userSchema)
