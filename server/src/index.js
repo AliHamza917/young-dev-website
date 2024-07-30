@@ -1,4 +1,5 @@
 const express = require("express")
+const dotenv = require("dotenv")
 const cors = require('cors');
 const errorHandler = require('./middleware/errorHandler')
 const authRouter = require("./router/authRouter")
@@ -9,6 +10,7 @@ const app = express();
 app.use(cors());
 const port = process.env.PORT || 5000;
 app.use(express.json());
+
 
 app.use('/api/auth',authRouter)
 app.use('/api/blogs',blogRouter)

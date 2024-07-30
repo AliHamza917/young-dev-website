@@ -1,13 +1,15 @@
 const expressAsyncHandler = require("express-async-handler");
 const UserModel = require("../model/userModel")
 
+
 const login = expressAsyncHandler (async (req ,res) =>{
     const {email, password} = req.body;
     await UserModel.findOne({email: email})
     const user = await UserModel.findOne({ email: email });
     if (user) {
         if (user.password === password) {
-            return res.status(200).json("Login Successful");
+
+            return res.status(200).json("Login Successful" );
         } else {
             res.status(401);
             throw new Error("Wrong Password");
@@ -41,4 +43,6 @@ const register = expressAsyncHandler ( async (req , res)=>{
 
 });
 
-module.exports = {login , register}
+
+
+module.exports = {login , register }
