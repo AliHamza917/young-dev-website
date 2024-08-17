@@ -2,12 +2,15 @@ import React, {useEffect, useState} from 'react';
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import axios from "axios";
+import {useCookies} from "react-cookie";
 
 const LoginPage = () => {
 
     const location = useLocation();
     const [inputs, setInputs] = useState({});
+    const [cookies, setCookie] = useCookies(['Token'])
     const navigate = useNavigate();
+
 
     const handleInput = (event) => {
         const { name, value } = event.target;
@@ -27,8 +30,9 @@ const LoginPage = () => {
                     }
                 )
                 toast.success("User Login SuccessFully")
+                setCookie('Token', response.data.token, { path: '/' })
                 navigate('/dashboard-page' ,{ state: { message: "User Login Successfully" } })
-                console.log(response.data)
+                console.log(response.data.message)
 
 
         }catch (err){

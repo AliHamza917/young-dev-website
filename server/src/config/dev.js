@@ -1,0 +1,1 @@
+MONGO_URI = 'mongodb+srv://AliHamza:Abb5785@apiexpress.zmmdfkh.mongodb.net/young-dev-db?retryWrites=true&w=majority&appName=ApiExpress'

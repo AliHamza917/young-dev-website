@@ -8,8 +8,11 @@ const login = expressAsyncHandler (async (req ,res) =>{
     const user = await UserModel.findOne({ email: email });
     if (user) {
         if (user.password === password) {
+            const token = user.generateAuthToken();
+            res.cookie('Token', token , {httpOnly: true})
 
-            return res.status(200).json("Login Successful" );
+
+            return res.status(200).json({message : "Login Successful", token} );
         } else {
             res.status(401);
             throw new Error("Wrong Password");
