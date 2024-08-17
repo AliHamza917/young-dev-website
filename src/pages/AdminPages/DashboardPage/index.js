@@ -9,7 +9,6 @@ const DashboardPage = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-
     useEffect(() => {
         if (location.state && location.state.message) {
             toast.success(location.state.message);

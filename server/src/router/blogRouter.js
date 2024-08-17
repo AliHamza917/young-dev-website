@@ -10,5 +10,4 @@ blogRouter.route('/update-blog/:b_id').put(updateBlog);
 blogRouter.route('/del-blog/:b_id').delete(delBlog);
 blogRouter.route('/blog-count').get(blogCount);
 
-
 module.exports = blogRouter;

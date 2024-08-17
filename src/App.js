@@ -30,7 +30,6 @@ function App() {
                             {/* Protect the login and registration pages */}
                             <Route path='/login-page' element={isLoggedIn ? <Navigate to="/dashboard-page" /> : <LoginPage/>}/>
                             <Route path='/registration-page' element={isLoggedIn ? <Navigate to="/dashboard-page" /> : <RegistrationPage/>}/>
-
                             {/* Other routes */}
                             <Route path='/dashboard-page' element={!isLoggedIn ? <Navigate to='/login-page'/> : <DashboardPage/>}/>
                             <Route path='/add-blog-form' element={<BlogForm/>}/>

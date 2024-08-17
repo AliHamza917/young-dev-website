@@ -34,7 +34,6 @@ const LoginPage = () => {
                 navigate('/dashboard-page' ,{ state: { message: "User Login Successfully" } })
                 console.log(response.data.message)
 
-
         }catch (err){
             toast.error("Please Check Email or Password")
             console.log(err)

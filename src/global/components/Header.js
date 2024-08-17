@@ -18,7 +18,6 @@ const Header = () => {
         removeCookie('Token', { path: '/' });
         navigate('/login-page');
     };
-
     // Determine itemsNames and pathNames based on the presence of the token
     const isLoggedIn = !!cookies.Token;
 

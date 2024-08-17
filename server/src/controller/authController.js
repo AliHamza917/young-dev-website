@@ -46,6 +46,4 @@ const register = expressAsyncHandler ( async (req , res)=>{
 
 });
 
-
-
 module.exports = {login , register }
